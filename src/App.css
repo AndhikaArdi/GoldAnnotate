@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #5746e3;
+  --color-brand-dark: #4636c9;
+  --color-page: #eeedfc;
+  --color-danger: #da372c;
+  --color-line: #f3f3f3;
+
+  --animate-flash-error: flash-error 1.4s ease-out;
+
+  @keyframes flash-error {
+    0% {
+      background-color: rgb(218 55 44 / 0.25);
+      transform: translateX(0);
+    }
+    15% {
+      transform: translateX(-4px);
+    }
+    30% {
+      transform: translateX(4px);
+    }
+    45% {
+      transform: translateX(-3px);
+    }
+    60% {
+      transform: translateX(0);
+    }
+    100% {
+      background-color: rgb(218 55 44 / 0);
+      transform: translateX(0);
+    }
+  }
+}
+
+
+/* Tema SweetAlert2. Dipakai lewat customClass di src/utils/helpers/notify.js */
+.swal2-container.swal2-backdrop-show {
+  background: rgb(0 0 0 / 0.5); /* sama dengan latar Modal (bg-black/50) */
+}
+
+.swal2-popup.goldset-swal {
+  border-radius: 10px;
+  padding: 1.25rem;
+  font-family: inherit;
+}
+
+.swal2-popup.goldset-swal .swal2-title {
+  padding: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.swal2-popup.goldset-swal .swal2-html-container {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.swal2-popup.goldset-swal .swal2-actions {
+  margin-top: 1.25rem;
+  gap: 0.5rem;
+}
+
+.swal2-popup.goldset-swal .swal2-actions button {
+  margin: 0;
+}
+
+.swal2-popup.goldset-swal button:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
